@@ -40,13 +40,15 @@ def delete_task(index):
         print(f"🗑️ Task '{removed}' deleted.")
     except IndexError:
         print("❌ Invalid task number.")
+    with open(TASKS_FILE, "w") as file:
 
 
 def main():
     print("SmartTaskCLI")
     print("1. Add Task")
     print("2. List Tasks")
-    print("3. Delete Task")
+    print("3. List Tasks")
+    print("4. Delete Task")
 
     choice = input("Choose an option: ")
 
