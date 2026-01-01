@@ -43,6 +43,12 @@ def delete_task(index):
     with open(TASKS_FILE, "w") as file:
 
 
+def load_tasks():
+    if not os.path.exists(TASKS_FILE):
+        return []
+    with open(TASKS_FILE, "r") as file:
+        return json.load(file)
+
 def main():
     print("SmartTaskCLI")
     print("1. Add Task")
