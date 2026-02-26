@@ -37,6 +37,13 @@ def list_tasks():
         print(f"{i}. {task}")
 
 
+
+def load_tasks():
+    if not os.path.exists(TASKS_FILE):
+        return []
+    with open(TASKS_FILE, "r") as file:
+        return json.load(file)
+
 def delete_task(index):
     tasks = load_tasks()
     try:
