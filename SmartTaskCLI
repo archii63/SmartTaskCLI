@@ -11,16 +11,6 @@ def load_tasks():
         return json.load(file)
 
 
-def save_tasks(tasks):
-    with open(TASKS_FILE, "w") as file:
-        json.dump(tasks, file, indent=4)
-
-def load_tasks():
-    if not os.path.exists(TASKS_FILE):
-        return []
-    with open(TASKS_FILE, "r") as file:
-        return json.load(file)
-
 def add_task(task):
     tasks = load_tasks()
     tasks.append(task)
@@ -41,6 +31,16 @@ def list_tasks():
     for i, task in enumerate(tasks, start=1):
         print(f"{i}. {task}")
 
+
+def save_tasks(tasks):
+    with open(TASKS_FILE, "w") as file:
+        json.dump(tasks, file, indent=4)
+
+def load_tasks():
+    if not os.path.exists(TASKS_FILE):
+        return []
+    with open(TASKS_FILE, "r") as file:
+        return json.load(file)
 
 
 def load_tasks():
